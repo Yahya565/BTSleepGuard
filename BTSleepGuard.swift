@@ -13,6 +13,7 @@
 // Logs:  log stream --predicate 'subsystem == "local.btsleepguard"'
 
 import AppKit
+import CoreBluetooth
 import IOBluetooth
 import os
 
@@ -34,6 +35,15 @@ final class SleepGuard: NSObject {
     }
 
     func start() {
+        // Read-only check (doesn't prompt). The installer reads this line to confirm setup.
+        let access: String
+        switch CBManager.authorization {
+        case .allowedAlways: access = "granted"
+        case .notDetermined: access = "pending"   // macOS shows the Allow prompt during registration below
+        default:             access = "denied"
+        }
+        log.notice("bluetooth access: \(access, privacy: .public)")
+
         let nc = NSWorkspace.shared.notificationCenter
         nc.addObserver(self, selector: #selector(willSleep(_:)),
                        name: NSWorkspace.willSleepNotification, object: nil)
