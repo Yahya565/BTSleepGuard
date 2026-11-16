@@ -68,21 +68,11 @@ cd BTSleepGuard
 
 You can also skip the list by passing a name or address: `./install.sh "Soundcore P3i"`.
 
-## How it compares
+## Why not Bluesnooze or sleepwatcher + blueutil?
 
-### [Bluesnooze](https://github.com/odlp/bluesnooze)
+**[Bluesnooze](https://github.com/odlp/bluesnooze)** turns off *all* Bluetooth when your Mac sleeps. That keeps the headphones off, but it also means a Bluetooth keyboard or mouse can't wake the Mac, and its README notes it breaks Apple Watch unlock. BTSleepGuard only touches the devices you pick.
 
-Bluesnooze turns off **all** Bluetooth when your Mac sleeps and turns it back on when it wakes.
-
-- **BTSleepGuard is better if** you only want your headphones kept off. Everything else stays connected, so a Bluetooth keyboard or mouse can still wake the Mac, and Apple Watch unlock keeps working (Bluesnooze's README notes it isn't compatible with that).
-- **Bluesnooze is better if** you want every Bluetooth device off during sleep, or you'd rather have a notarized menu bar app installed with Homebrew instead of using Terminal.
-
-### sleepwatcher + [blueutil](https://github.com/toy/blueutil) scripts
-
-These tools are great, but neither tells you when a device *connects*. The common DIY fix is a shell loop that runs `blueutil --disconnect` every few seconds while the Mac sleeps, and often reconnects the headphones on wake.
-
-- **BTSleepGuard is better because** that loop is frozen while the Mac is actually asleep, so it can miss connections during short dark wakes, and it starts several processes every cycle. Reconnecting on wake also pulls the headphones away from your phone. BTSleepGuard reacts to macOS's own connection notification the moment the headphones connect, costs nothing in between, and never reconnects them.
-- **The scripts are better if** you want something you can read and tweak in a minute using well-known Homebrew tools.
+**sleepwatcher + [blueutil](https://github.com/toy/blueutil) scripts** run `blueutil --disconnect` in a loop every few seconds while the Mac sleeps. That loop is frozen during real sleep, so it can miss connections during short dark wakes, and it starts several processes every cycle. Most versions also reconnect the headphones on wake, which pulls them away from your phone. BTSleepGuard reacts to macOS's own connection notification the moment the headphones connect, costs nothing in between, and never reconnects them.
 
 ## Notes
 
