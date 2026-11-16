@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BTSleepGuard post image</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #fafaf7; }
+  svg { display: block; }
+  text { font-family: -apple-system, "SF Pro Text", system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#fafaf7"/>
+
+  <!-- headline -->
+  <text x="800" y="178" text-anchor="middle" font-size="52" font-weight="600" fill="#161616" letter-spacing="-0.5">Your MacBook is asleep.</text>
+  <text x="800" y="246" text-anchor="middle" font-size="52" font-weight="600" fill="#9a9a96" letter-spacing="-0.5">Your headphones stay on your phone.</text>
+
+  <g fill="none" stroke="#161616" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- LEFT: phone with a music note -->
+    <rect x="270" y="410" width="124" height="236" rx="24"/>
+    <path d="M312 432 H352"/>
+    <path d="M322 556 V500 L360 492 V546"/>
+    <circle cx="313" cy="556" r="10" fill="#161616" stroke="none"/>
+    <circle cx="351" cy="546" r="10" fill="#161616" stroke="none"/>
+
+    <!-- CENTER: headphones -->
+    <path d="M730 566 A70 80 0 0 1 870 566"/>
+    <rect x="708" y="552" width="44" height="84" rx="18"/>
+    <rect x="848" y="552" width="44" height="84" rx="18"/>
+
+    <!-- RIGHT: closed MacBook -->
+    <path d="M1166 520 H1374 L1404 616 H1136 Z"/>
+    <path d="M1136 616 H1404 V626 Q1404 634 1396 634 H1144 Q1136 634 1136 626 Z"/>
+  </g>
+
+  <!-- moon over the MacBook -->
+  <mask id="crescent">
+    <rect x="1220" y="400" width="100" height="100" fill="#fff"/>
+    <circle cx="1283" cy="440" r="24" fill="#000"/>
+  </mask>
+  <circle cx="1270" cy="452" r="26" fill="#161616" mask="url(#crescent)"/>
+
+  <!-- phone ↔ headphones: connected -->
+  <line x1="420" y1="594" x2="684" y2="594" stroke="#161616" stroke-width="4" stroke-linecap="round"/>
+  <text x="552" y="552" text-anchor="middle" font-size="22" font-weight="500" fill="#6b6b67">connected</text>
+
+  <!-- headphones ↔ MacBook: blocked -->
+  <line x1="916" y1="594" x2="1112" y2="594" stroke="#d83a34" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 14"/>
+  <circle cx="1014" cy="594" r="22" fill="#fafaf7" stroke="#d83a34" stroke-width="4"/>
+  <path d="M1006 586 L1022 602 M1022 586 L1006 602" stroke="#d83a34" stroke-width="4" stroke-linecap="round"/>
+  <text x="1014" y="552" text-anchor="middle" font-size="22" font-weight="500" fill="#d83a34">disconnected</text>
+
+  <!-- labels -->
+  <g font-size="28" font-weight="500" text-anchor="middle" fill="#161616">
+    <text x="332" y="712">Phone</text>
+    <text x="800" y="712">Headphones</text>
+    <text x="1270" y="712">MacBook <tspan fill="#9a9a96">(asleep)</tspan></text>
+  </g>
+
+  <!-- footer -->
+  <line x1="120" y1="790" x2="1480" y2="790" stroke="#e6e5df" stroke-width="2"/>
+  <text x="120" y="840" font-size="24" font-weight="600" fill="#161616">BTSleepGuard</text>
+  <text x="1480" y="840" text-anchor="end" font-size="24" font-weight="400" fill="#6b6b67">free &amp; open source · github.com/Yahya565/BTSleepGuard</text>
+</svg>
+</body>
+</html>

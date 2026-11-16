@@ -1,5 +1,7 @@
 # BTSleepGuard
 
+![Your MacBook is asleep. Your headphones stay on your phone.](assets/btsleepguard-post.png)
+
 Stops Bluetooth headphones from connecting to your MacBook while it's asleep.
 
 If you use multipoint headphones (Soundcore, Sony, Bose, etc.), you've probably had this happen: you take your headphones out of the case, and instead of your phone, they connect to the MacBook sitting closed in your bag. BTSleepGuard watches for that and immediately disconnects them, but only while the Mac is asleep. When you open the lid, everything works as normal.
